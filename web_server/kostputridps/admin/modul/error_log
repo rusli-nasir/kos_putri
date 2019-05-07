@@ -1,0 +1,105 @@
+[20-Jul-2012 11:59:12] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[21-Jul-2012 14:32:20] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[22-Jul-2012 08:04:37] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[23-Jul-2012 00:22:35] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[23-Jul-2012 18:36:23] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[23-Jul-2012 18:47:53] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[24-Jul-2012 11:30:53] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[24-Jul-2012 11:35:37] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[25-Jul-2012 03:44:04] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[25-Jul-2012 22:12:16] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[27-Jul-2012 03:07:14] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[28-Jul-2012 00:43:50] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[29-Jul-2012 01:11:34] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[29-Jul-2012 21:33:04] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[30-Jul-2012 21:53:39] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[31-Jul-2012 04:25:01] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[31-Jul-2012 04:25:01] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[31-Jul-2012 04:25:01] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 40
+[31-Jul-2012 10:20:53] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[31-Jul-2012 11:48:25] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[31-Jul-2012 11:48:25] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[31-Jul-2012 11:48:25] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[01-Aug-2012 22:08:24] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 10
+[02-Aug-2012 12:48:17] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[10-Aug-2012 22:39:47] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[10-Aug-2012 22:39:47] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[10-Aug-2012 22:39:47] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[11-Aug-2012 23:26:21] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[11-Aug-2012 23:26:27] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[11-Aug-2012 23:27:05] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[11-Aug-2012 23:27:05] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[11-Aug-2012 23:27:05] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[11-Aug-2012 23:27:11] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[11-Aug-2012 23:27:11] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[11-Aug-2012 23:27:11] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 40
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 63
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 63
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 64
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 71
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 71
+[11-Aug-2012 23:27:13] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 72
+[11-Aug-2012 23:27:13] PHP Fatal error:  Call to undefined function combotgl() in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 83
+[11-Aug-2012 23:27:29] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[11-Aug-2012 23:27:29] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[11-Aug-2012 23:27:29] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_modul.php on line 10
+[15-Aug-2012 11:58:58] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[15-Aug-2012 11:58:58] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[15-Aug-2012 11:58:58] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_icon.php on line 11
+[15-Aug-2012 12:02:53] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 40
+[17-Aug-2012 08:19:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[17-Aug-2012 08:19:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[17-Aug-2012 08:19:15] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_modul.php on line 10
+[19-Aug-2012 06:05:46] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[28-Aug-2012 21:03:22] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 10
+[30-Aug-2012 05:07:09] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[30-Aug-2012 05:07:09] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[30-Aug-2012 05:07:09] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[02-Sep-2012 19:28:06] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[08-Sep-2012 13:33:44] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[15-Sep-2012 22:50:18] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[15-Sep-2012 22:50:18] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[15-Sep-2012 22:50:18] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_modul.php on line 10
+[16-Sep-2012 01:48:45] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 40
+[16-Sep-2012 01:50:32] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[16-Sep-2012 01:50:32] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[16-Sep-2012 01:50:32] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_icon.php on line 11
+[27-Sep-2012 13:28:08] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[27-Sep-2012 13:28:08] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[27-Sep-2012 13:28:08] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[27-Sep-2012 16:43:56] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 10
+[28-Sep-2012 02:11:12] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[28-Sep-2012 02:11:12] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[28-Sep-2012 02:11:12] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 40
+[29-Sep-2012 23:04:56] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[29-Sep-2012 23:04:56] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 38
+[29-Sep-2012 23:04:56] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_jadwal.php on line 40
+[04-Oct-2012 19:12:49] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[05-Nov-2012 04:56:30] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[05-Nov-2012 04:56:44] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[05-Nov-2012 04:56:44] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[05-Nov-2012 04:56:44] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[05-Nov-2012 05:01:36] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[05-Nov-2012 05:01:36] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_icon.php on line 9
+[05-Nov-2012 05:01:36] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_icon.php on line 11
+[05-Nov-2012 05:02:07] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[05-Nov-2012 05:02:07] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_modul.php on line 9
+[05-Nov-2012 05:02:07] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_modul.php on line 10
+[05-Nov-2012 05:02:13] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 10
+[05-Nov-2012 05:02:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 56
+[05-Nov-2012 05:02:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 56
+[05-Nov-2012 05:02:15] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_subcabor.php on line 57
+[05-Nov-2012 09:00:39] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_katlok.php on line 10
+[05-Nov-2012 09:00:51] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_katlok.php on line 58
+[05-Nov-2012 09:00:51] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_katlok.php on line 58
+[05-Nov-2012 09:00:51] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_katlok.php on line 59
+[05-Nov-2012 09:01:01] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[05-Nov-2012 09:01:01] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_user.php on line 9
+[05-Nov-2012 09:01:01] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_user.php on line 11
+[05-Nov-2012 09:02:34] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 40
+[05-Nov-2012 09:02:38] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'samat513'@'localhost' (using password: NO) in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 84
+[05-Nov-2012 09:02:38] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 84
+[05-Nov-2012 09:02:38] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 85
+[05-Nov-2012 09:02:53] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_cabor.php on line 10
+[05-Nov-2012 09:03:05] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/samat513/public_html/admin/modul/modul_kota.php on line 14
+[20-Nov-2012 09:10:25] PHP Fatal error:  Class 'Paging' not found in /home/samat513/public_html/admin/modul/modul_lokasi.php on line 40

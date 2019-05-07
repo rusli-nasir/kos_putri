@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Home">
+
+    <ImageButton
+        android:id="@+id/btnPT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/pt"
+        android:src="@drawable/pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="93dp"
+        android:layout_height="49dp"
+        android:layout_below="@+id/btnPT"
+        android:layout_alignRight="@+id/btnPT"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/pt"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnLP"
+        app:layout_constraintStart_toStartOf="@+id/btnLP"
+        app:layout_constraintTop_toBottomOf="@+id/btnLP" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignLeft="@+id/btnLP"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/lp"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnPT"
+        app:layout_constraintStart_toStartOf="@+id/btnPT"
+        app:layout_constraintTop_toBottomOf="@+id/btnPT" />
+
+    <ImageButton
+        android:id="@+id/btnLP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnPT"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/lp"
+        android:src="@drawable/lp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPT"
+        app:layout_constraintEnd_toEndOf="@+id/barrier2"
+        app:layout_constraintTop_toTopOf="@+id/btnPT" />
+
+    <ImageButton
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignLeft="@+id/btnPT"
+        android:layout_marginTop="66dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/help"
+        android:src="@drawable/help"
+        app:layout_constraintBottom_toTopOf="@+id/barrier3"
+        app:layout_constraintEnd_toEndOf="@+id/btnPT"
+        app:layout_constraintStart_toStartOf="@+id/btnPT"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnHelp"
+        android:layout_alignLeft="@+id/btnHelp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/help"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnHelp"
+        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintStart_toStartOf="@+id/btnHelp"
+        app:layout_constraintTop_toBottomOf="@+id/btnHelp" />
+
+    <ImageButton
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/textView2"
+        android:background="@drawable/exit"
+        android:src="@drawable/exit"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHelp"
+        app:layout_constraintEnd_toEndOf="@+id/btnLP"
+        app:layout_constraintStart_toStartOf="@+id/btnLP"
+        app:layout_constraintTop_toTopOf="@+id/btnHelp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignLeft="@+id/btnExit"
+        android:layout_alignRight="@+id/btnExit"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/exit"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnExit"
+        app:layout_constraintStart_toStartOf="@+id/btnExit"
+        app:layout_constraintTop_toBottomOf="@+id/btnExit" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="731dp" />
+
+</android.support.constraint.ConstraintLayout>
