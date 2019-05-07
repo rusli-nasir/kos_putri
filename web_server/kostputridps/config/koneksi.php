@@ -4,9 +4,9 @@ $server = "localhost";
 $username = "root";
 $password = "";
 $database = "kosputridps";
-$port = 3307;//Default 3306
+$port = 3306;
 
-$gmap_key = 'AIzaSyBgg8CB-TAMqScPX9yEb58iwnwIZ46KuE0';
+$gmap_key = 'GMAP_API_KEY'; // isikan dengan googlemap api key dari google
 
 // Koneksi dan memilih database di server
 mysql_connect($server . ':' . $port,$username,$password) or die("Koneksi gagal");
