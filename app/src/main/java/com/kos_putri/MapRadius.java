@@ -86,6 +86,9 @@ public class MapRadius extends FragmentActivity implements
                 public void onCameraMoveCanceled() {
                     int zoomPos = (int) map.getCameraPosition().zoom;
                     int inputZoomPos = Integer.valueOf(txtZoomLvl.getText().toString());
+                    if(zoomPos != inputZoomPos){
+                        txtZoomLvl.setText(zoomPos);
+                    }
                 }
             });
 
@@ -110,8 +113,8 @@ public class MapRadius extends FragmentActivity implements
     @Override
     public void onMyLocationChange(Location location) {
         map.clear();
-        intRadius = Integer.parseInt(txtRadius.getText().toString());
-        intZoom = Integer.parseInt(txtZoomLvl.getText().toString());
+        intRadius = !txtRadius.getText().toString().equals("") ?Integer.parseInt(txtRadius.getText().toString()):1;
+        intZoom = !txtZoomLvl.getText().toString().equals("")?Integer.parseInt(txtZoomLvl.getText().toString()):0;
 
         LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
 
@@ -186,15 +189,16 @@ public class MapRadius extends FragmentActivity implements
 //        		rad+=100;
 //        	}
 
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,intZoom));
+            if(intZoom <= 0){
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,intZoom));
+            }
             Log.d("client location", loc.toString());
         }
-
-
     }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(this,marker.getTitle(),Toast.LENGTH_LONG).show();
         return false;
     }
 }
