@@ -9,8 +9,8 @@
     <string name="exit">KELUAR</string>
     <string name="ket">Silahkan ketikkan nama penginapan yang di cari ! \n Pencarian filter data berdasarkan nama penginpan.</string>
 
-    <string name="server_url">http://127.0.0.1/kostputridps/lbsConn/</string>
-    <string name="image_server_url">http://127.0.0.1/kostputridps/admin/image_upload/</string>
+    <string name="server_url">http://192.168.1.3/kostputridps/lbsConn/</string>
+    <string name="image_server_url">http://192.168.1.3/kostputridps/admin/image_upload/</string>
     <string name="title_activity_help">Panduan Penggunaan Aplikasi</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -101,4 +101,15 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_daftar_penginapan">Daftar Penginapan</string>
+    <string name="title_activity_detail_penginapan">Detail_penginapan</string>
+    <string name="judul">Judul</string>
+    <string name="lb_fasilitas">Fasilitas :</string>
+    <string name="lb_harga">Harga :</string>
+    <string name="lb_status">Status :</string>
+    <string name="lb_alamat">Alamat :</string>
+    <string name="lb_no_tlp">No.Tlp :</string>
+    <string name="lb_rute">Rute</string>
+    <string name="lb_nama">Nama :</string>
+    <string name="conten_des_img_penginapan">Image Penginapan</string>
 </resources>

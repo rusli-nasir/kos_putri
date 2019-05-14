@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DaftarPenginapan"
+    tools:showIn="@layout/daftar_penginapan">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#97C03C">
+
+            <TextView
+                android:id="@+id/infotxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/ket"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/caritxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="450dp"
+                android:hint="Nama Penginapan"
+                android:inputType="none"></EditText>
+
+            <requestFocus />
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/listDP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

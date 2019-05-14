@@ -13,20 +13,20 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton btnPT = (ImageButton) findViewById(R.id.btnPT);
-        ImageButton btnLP = (ImageButton) findViewById(R.id.btnLP);
-        ImageButton btnHelp = (ImageButton) findViewById(R.id.btnHelp);
-        ImageButton btnExit = (ImageButton) findViewById(R.id.btnExit);
+        ImageButton btnPT = (ImageButton) findViewById(R.id.btnPT);//Penginapan terdekat
+        ImageButton btnLP = (ImageButton) findViewById(R.id.btnLP);//List Penginapan
+        ImageButton btnHelp = (ImageButton) findViewById(R.id.btnHelp);//Help
+        ImageButton btnExit = (ImageButton) findViewById(R.id.btnExit);//Exit
 
         btnPT.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-//                Intent iPT = new Intent (Home.this, Map_Radius.class);
-//                startActivity(iPT);
-                Intent iHelp = new Intent (Home.this, Penginapan.class);
-                startActivity(iHelp);
+                Intent iPT = new Intent (Home.this, MapRadius.class);
+                startActivity(iPT);
+//                Intent iHelp = new Intent (Home.this, DaftarPenginapan.class);
+//                startActivity(iHelp);
 
             }
         });
@@ -36,11 +36,11 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-//                Intent iLP = new Intent (Home.this, KatPenginapan.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("jenis", "lp");
-//                iLP.putExtras(bundle);
-//                startActivity(iLP);
+                Intent iLP = new Intent (Home.this, KatPenginapan.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("jenis", "lp");
+                iLP.putExtras(bundle);
+                startActivity(iLP);
 
             }
         });
