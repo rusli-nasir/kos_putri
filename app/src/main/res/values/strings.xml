@@ -9,8 +9,8 @@
     <string name="exit">KELUAR</string>
     <string name="ket">Silahkan ketikkan nama penginapan yang di cari ! \n Pencarian filter data berdasarkan nama penginpan.</string>
 
-    <string name="server_url">http://192.168.1.3/kostputridps/lbsConn/</string>
-    <string name="image_server_url">http://192.168.1.3/kostputridps/admin/image_upload/</string>
+    <string name="server_url">https://kosputridps.com/lbsConn/</string>
+    <string name="image_server_url">https://kosputridps.com/admin/image_upload/</string>
     <string name="title_activity_help">Panduan Penggunaan Aplikasi</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

@@ -50,6 +50,7 @@ public class JsonParseVolley {
                 error.printStackTrace();
             }
         });
+        jsonObjectRequest.setTag("VolleyBlockingRequestActivity");
 
         queue.add(jsonObjectRequest);
 
@@ -73,6 +74,10 @@ public class JsonParseVolley {
 
         queue.add(jsonObjectRequest);
         return jObj;
+    }
+
+    public void stopRequest(String tag){
+        queue.cancelAll(tag);
     }
 
 }
