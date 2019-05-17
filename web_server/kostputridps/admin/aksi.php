@@ -3,6 +3,8 @@ session_start();
 include "../config/koneksi.php";
 include "../config/library.php";
 
+$id_user = $_SESSION['namauser'];
+$leveluser = $_SESSION['leveluser'];
 $module=$_GET['module'];
 $act=$_GET['act'];
 
@@ -135,6 +137,7 @@ elseif ($module=='penginapan' AND $act=='input'){
     //}
     mysql_query("INSERT INTO penginapan(nama,
     								  fasilitas,
+    								  id_pemilik,
     								  harga,
     								  status,
                                       alamat,
@@ -146,6 +149,7 @@ elseif ($module=='penginapan' AND $act=='input'){
 									  gambar )
 					                     VALUES('$_POST[nama]',
 					                     		'$_POST[fasilitas]',
+					                     		'$_POST[id_pemilik]',
 					                     		'$_POST[harga]',
 					                     		'$_POST[status]',
 												'$_POST[alamat]',
@@ -190,6 +194,7 @@ elseif ($module=='penginapan' AND $act=='input'){
     //echo $icon;
     mysql_query("INSERT INTO penginapan(nama,
     								  fasilitas,
+    								  id_pemilik,
     								  harga,
     								  status,
                                       alamat,
@@ -200,6 +205,7 @@ elseif ($module=='penginapan' AND $act=='input'){
 									  telepon)
                             VALUES('$_POST[nama]',
                             					'$_POST[fasilitas]',
+                            					'$_POST[id_pemilik]',
                             					'$_POST[harga]',
                             					'$_POST[status]',
 												'$_POST[alamat]',
@@ -250,7 +256,22 @@ elseif ($module=='penginapan' AND $act=='update'){
     //else{
     //  $icon=1;
     //}
+
     $query = "UPDATE penginapan SET nama = '$_POST[nmpenginapan]',
+    								  fasilitas = '$_POST[fasilitas]',
+    								  id_pemilik = '$_POST[id_pemilik]',
+    								  harga = '$_POST[harga]',
+    								  status = '$_POST[status]',
+                                      alamat = '$_POST[alamat]',
+									  id_kategori_penginapan = '$_POST[kategori]',
+									  id_icon = '$icon',
+									  latitude = '$_POST[lati]',
+									  longitude = '$_POST[long]',
+									  telepon = '$telepon'
+                             WHERE id_penginapan = '$_POST[id]'";
+
+      if($leveluser == 'pemilik'){
+          $query = "UPDATE penginapan SET nama = '$_POST[nmpenginapan]',
     								  fasilitas = '$_POST[fasilitas]',
     								  harga = '$_POST[harga]',
     								  status = '$_POST[status]',
@@ -261,6 +282,8 @@ elseif ($module=='penginapan' AND $act=='update'){
 									  longitude = '$_POST[long]',
 									  telepon = '$telepon'
                              WHERE id_penginapan = '$_POST[id]'";
+      }
+
     //	 echo $query;
     mysql_query($query) or die(mysql_error());
   }else{
@@ -293,7 +316,23 @@ elseif ($module=='penginapan' AND $act=='update'){
     //else{
     //  $icon=1;
     //}
-    mysql_query("UPDATE penginapan SET nama = '$_POST[nmpenginapan]',
+
+      $query = "UPDATE penginapan SET nama = '$_POST[nmpenginapan]',
+    								  fasilitas = '$_POST[fasilitas]',
+    								  id_pemilik = '$_POST[id_pemilik]',
+    								  harga = '$_POST[harga]',
+    								  status = '$_POST[status]',
+                                      alamat = '$_POST[alamat]',
+									  id_kategori_penginapan = '$_POST[katpenginapan]',
+									  id_icon = '$icon',
+									  latitude = '$_POST[lati]',
+									  longitude = '$_POST[long]',
+									  telepon = '$_POST[telepon]',
+                                      gambar    = '$nama_file'
+                             WHERE id_penginapan = '$_POST[id]'";
+
+      if($leveluser == 'pemilik'){
+          $query = "UPDATE penginapan SET nama = '$_POST[nmpenginapan]',
     								  fasilitas = '$_POST[fasilitas]',
     								  harga = '$_POST[harga]',
     								  status = '$_POST[status]',
@@ -304,7 +343,10 @@ elseif ($module=='penginapan' AND $act=='update'){
 									  longitude = '$_POST[long]',
 									  telepon = '$_POST[telepon]',
                                       gambar    = '$nama_file'
-                             WHERE id_penginapan = '$_POST[id]'");
+                             WHERE id_penginapan = '$_POST[id]'";
+      }
+
+    mysql_query($query);
   }
   header('location:media.php?module='.$module);
 }

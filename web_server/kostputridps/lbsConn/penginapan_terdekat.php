@@ -35,6 +35,7 @@
                 'longitude'             => $b['longitude'],
                 'telepon'               => $b['telepon'],
                 'gambar'                => $b['gambar'],                
+                'distance'                => $b['distance'],                
             ];            
         }
         

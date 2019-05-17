@@ -85,6 +85,7 @@
 
 </script>
     <?php
+    $id_user = $_SESSION['namauser'];
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 switch($_GET['act']){
     // Tampil Penginapan
@@ -92,24 +93,34 @@ switch($_GET['act']){
         echo "<h2>Penginapan</h2>
           <input type=button value='Tambah Penginapan' onclick=location.href='?module=penginapan&act=tambahpenginapan'>
           <table>
-           <tr><th>no</th><th>Nama </th><th>Latitude</th><th>Longitude</th><th>aksi</th></tr>";
+           <tr>
+           <th>no</th>
+           <th>Nama Penginapan</th>           
+           <th>Pemilik</th>           
+           <th>Latitude</th>
+           <th>Longitude</th>
+           <th>aksi</th>
+           </tr>";
 
         $p      = new Paging;
         $batas  = 10;
         $posisi = $p->cariPosisi($batas);
+        $query = '';
 
         if ($_SESSION['leveluser']=='admin'){
-            $tampil = mysql_query("SELECT * FROM penginapan ORDER BY id_penginapan DESC limit $posisi,$batas");
+            $query = "SELECT * FROM penginapan ORDER BY id_penginapan DESC limit {$posisi},{$batas}";
         } if ($_SESSION['leveluser']=='pemilik'){
-            $tampil = mysql_query("SELECT * FROM penginapan ORDER BY id_penginapan DESC limit $posisi,$batas");
+            $query = "SELECT * FROM penginapan WHERE id_pemilik = '{$id_user}' ORDER BY id_penginapan DESC limit {$posisi},{$batas}";
+
         }
+        $tampil = mysql_query($query);
 
         $no = $posisi+1;
         while($r=mysql_fetch_array($tampil)){
             $tgl_posting=tgl_indo($r[tanggal]);
             echo "<tr><td>$no</td>
                 <td>$r[nama]</td>
-
+                <td>$r[id_pemilik]</td>
 				<td>$r[latitude]</td>
 				<td>$r[longitude]</td>
                 <td><a href=?module=penginapan&act=editpenginapan&id=$r[id_penginapan]>Edit</a> |
@@ -123,7 +134,7 @@ switch($_GET['act']){
             $jmldata = mysql_num_rows(mysql_query("SELECT * FROM penginapan"));
         }
         else{
-            $jmldata = mysql_num_rows(mysql_query("SELECT * FROM penginapan WHERE id_admin='$_SESSION[namaadmin]'"));
+            $jmldata = mysql_num_rows(mysql_query("SELECT * FROM penginapan WHERE id_pemilik = '{$id_user}'"));
         }
         $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
         $linkHalaman = $p->navHalaman($_GET['halaman'], $jmlhalaman);
@@ -138,6 +149,14 @@ switch($_GET['act']){
         while($r=mysql_fetch_array($tampil)){
             $optkatpenginapan .= "<option value=$r[id_kategori_penginapan]>$r[nama_kategori]</option>";
         }
+        $optPemilik = '';
+    if ($_SESSION['leveluser']=='admin'){
+        $dataAdmin=mysql_query("SELECT * FROM admin where `level` = 'pemilik'");
+        while($r=mysql_fetch_array($dataAdmin)){
+            $optPemilik .= "<option value=$r[id_admin]>$r[nama_lengkap]</option>";
+        }
+    }
+
 
 //        $tampil=mysql_query("SELECT * FROM aliran_gereja");
 //        while($r=mysql_fetch_array($tampil)){
@@ -179,7 +198,24 @@ switch($_GET['act']){
                         </select>
                     </td>
                 </tr>
-
+                <?php
+                if ($_SESSION['leveluser']=='admin'){
+                    ?>
+                    <tr>
+                        <td>Pemilik</td>
+                        <td> : <select name='id_pemilik'>
+                                <option value=0 selected>- Pilih Pemilik Penginapan -</option>
+                                <?= $optPemilik?>
+                            </select>
+                        </td>
+                    </tr>
+                    <?php
+                }else{
+                    ?>
+                    <input type="hidden" name="id_pemilik" value="<?= $id_user?>">
+                    <?php
+                }
+                ?>
                 <tr>
                     <td>Latitude</td>
                     <td> : <input type=text id="lati" name="lati" size=60></td>
@@ -224,6 +260,19 @@ switch($_GET['act']){
             }
         }
 
+        $optPemilik = '';
+        if ($_SESSION['leveluser']=='admin'){
+            $dataAdmin=mysql_query("SELECT * FROM admin where `level` = 'pemilik'");
+            while($x=mysql_fetch_array($dataAdmin)){
+                if ($r['id_pemilik']==$x['id_admin']){
+                    $optPemilik .= "<option value=$x[id_admin] selected>$x[nama_lengkap]</option>";
+                }
+                else{
+                    $optPemilik .= "<option value=$x[id_admin]>$x[nama_lengkap]</option>";
+                }
+            }
+        }
+
         ?>
         <script>
             latitude = <?= $r['latitude']?>;
@@ -259,6 +308,20 @@ switch($_GET['act']){
                     <td>Kategori</td>
                     <td> : <select name='kategori' onChange='javascript:dinamis(this)'><?= $listKetegory?></select></td>
                 </tr>
+                <?php
+                if ($_SESSION['leveluser']=='admin'){
+                    ?>
+                    <tr>
+                        <td>Pemilik</td>
+                        <td> : <select name='id_pemilik'>
+                                <option value=0 selected>- Pilih Pemilik Penginapan -</option>
+                                <?= $optPemilik?>
+                            </select>
+                        </td>
+                    </tr>
+                    <?php
+                }
+                ?>
                 <tr>
                     <td>Latitude</td>
                     <td>          : <input type=text id="lati" name='lati' size=60 value='<?= $r[latitude]?>'></td></tr>
