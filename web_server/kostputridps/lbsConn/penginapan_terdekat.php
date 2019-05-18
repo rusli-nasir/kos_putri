@@ -40,7 +40,7 @@
         }
         
     }else{        
-        $data['lokasi'][] = null;
+        $data['lokasi'][] = [];
     }
     
     echo json_encode($data);

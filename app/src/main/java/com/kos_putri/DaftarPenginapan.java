@@ -55,7 +55,8 @@ public class DaftarPenginapan extends AppCompatActivity implements customButtonL
         jsonObject = jsonParse.getJsonURL(link_url);
         int id_penginapan, id_kategori_penginapan, id_icon;
         double latitude,longitude;
-        String nama_kategori,icon,nama,fasilitas,harga,status,alamat,telepon,gambar;
+        String nama_kategori,icon,nama,fasilitas,status,alamat,telepon,gambar,harga;
+
         if(penginapanModels != null){
             penginapanModels.clear();
         }

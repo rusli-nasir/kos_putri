@@ -3,10 +3,13 @@ package com.kos_putri;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -28,6 +31,8 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.ui.BubbleIconFactory;
+import com.google.maps.android.ui.IconGenerator;
 import com.kos_putri.map.PenginapanInfoWindowGoogleMap;
 import com.kos_putri.model.PenginapanModel;
 import com.kos_putri.util.InputFilterMinMax;
@@ -40,22 +45,27 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MapRadius extends FragmentActivity implements
-        OnMapReadyCallback, GoogleMap.OnMarkerClickListener,
+        OnMapReadyCallback,
         GoogleMap.OnMyLocationChangeListener {
-
+    private Context context;
     private GoogleMap map;
     private Circle circle;
     private Marker myMarker;
-
+    private List<Marker> markerList = new ArrayList<Marker>();
     private LatLng latLngBiru = new LatLng(Double.parseDouble("-8.669371"), Double.parseDouble("115.213271"));
+    private JSONObject jsonObject;
+    private JsonParseVolley jsonParse;
     List<PenginapanModel> penginapanModels;
     PenginapanModel penginapanModel;
     EditText txtZoomLvl, txtRadius;
     JSONArray lokasi_json = null;
     int intRadius, intZoom;
+    Map<String, PenginapanModel> mMarkerMap = new HashMap<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +77,9 @@ public class MapRadius extends FragmentActivity implements
         txtRadius.setFilters(new InputFilter[]{new InputFilterMinMax("1", "20")});
 
         penginapanModels = new ArrayList<PenginapanModel>();
+        jsonParse = new JsonParseVolley(this.getApplicationContext());
+        context = this.getApplicationContext();
+
         SupportMapFragment mapFrag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         if (mapFrag != null) {
             mapFrag.getMapAsync(this);
@@ -106,7 +119,7 @@ public class MapRadius extends FragmentActivity implements
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                Log.d("Zoomto",s.toString());
             }
         });
 
@@ -123,16 +136,28 @@ public class MapRadius extends FragmentActivity implements
             map.animateCamera(point);
             map.setMyLocationEnabled(true);
             map.setOnMyLocationChangeListener(this);
+            LoadMapMarker(latLngBiru);
 
-            map.setOnCameraMoveCanceledListener(new GoogleMap.OnCameraMoveCanceledListener() {
+//            map.setOnCameraMoveCanceledListener(new GoogleMap.OnCameraMoveCanceledListener() {
+//                @Override
+//                public void onCameraMoveCanceled() {
+//                    int zoomPos = (int) map.getCameraPosition().zoom;
+//                    int inputZoomPos = Integer.valueOf(txtZoomLvl.getText().toString());
+//                    if(zoomPos != inputZoomPos){
+//                        txtZoomLvl.setText(String.valueOf(zoomPos));
+//                    }
+//                    LoadMapMarker(latLngBiru);
+//                }
+//            });
+            map.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
                 @Override
-                public void onCameraMoveCanceled() {
+                public void onCameraMove() {
                     int zoomPos = (int) map.getCameraPosition().zoom;
                     int inputZoomPos = Integer.valueOf(txtZoomLvl.getText().toString());
                     if(zoomPos != inputZoomPos){
                         txtZoomLvl.setText(String.valueOf(zoomPos));
                     }
-                    LoadMapMarker(latLngBiru);
+//                    LoadMapMarker(latLngBiru);
                 }
             });
 
@@ -142,8 +167,6 @@ public class MapRadius extends FragmentActivity implements
                     LoadMapMarker(latLng);
                 }
             });
-
-            LoadMapMarker(latLngBiru);
         }
     }
 
@@ -168,9 +191,14 @@ public class MapRadius extends FragmentActivity implements
     }
 
     public void LoadMapMarker(LatLng latLng){
-        if(map !=null){
-            map.clear();
-        }
+        jsonObject = null;
+        map.clear();
+//        if(map !=null){
+//            Log.d("Map","Clear Map");
+//            map.clear();
+//            Log.d("Map","Clear Marker");
+//            markerList.clear();
+//        }
         intRadius = !txtRadius.getText().toString().equals("") ?Integer.parseInt(txtRadius.getText().toString()):1;
         intZoom = !txtZoomLvl.getText().toString().equals("")?Integer.parseInt(txtZoomLvl.getText().toString()):0;
 
@@ -181,10 +209,11 @@ public class MapRadius extends FragmentActivity implements
                 "&long=" + latLng.longitude +
                 "&rad=" + intRadius;
         Log.d("url", link_url);
-        JsonParseVolley jsonParse = new JsonParseVolley(this.getApplicationContext());
-        JSONObject jsonObject;
+
+
+
         jsonObject =  jsonParse.getJsonURL(link_url);
-        Log.d("jsonObject", String.valueOf(jsonObject));
+        Log.d("jsonObject1", String.valueOf(jsonObject));
         map.addMarker(new MarkerOptions()
                 .position(loc)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon))
@@ -199,7 +228,7 @@ public class MapRadius extends FragmentActivity implements
                 lokasi_json = jsonObject.getJSONArray("lokasi");
                 if(lokasi_json != null){
                     for (int i = 0; i < lokasi_json.length(); i++) {
-                        JSONObject ar = lokasi_json.getJSONObject(i);
+                        final JSONObject ar = lokasi_json.getJSONObject(i);
                         gambar = null;
                         try {
                             gambar = getString(R.string.image_server_url) + URLEncoder.encode(ar.getString("gambar"),"UTF-8");
@@ -214,7 +243,7 @@ public class MapRadius extends FragmentActivity implements
                                 0,"",
                                 ar.getString("nama"),
                                 ar.getString("fasilitas"),
-                                ar.getString("telepon"),
+                                ar.getString("harga"),
                                 ar.getString("status"),
                                 ar.getString("alamat"),
                                 ar.getDouble("latitude"),
@@ -222,7 +251,6 @@ public class MapRadius extends FragmentActivity implements
                                 ar.getString("telepon"),
                                 gambar
                         );
-
 //                        id_penginapan = ar.getInt("id_penginapan");
 //                        id_kategori_penginapan = ar.getInt("id_kategori_penginapan");
 //                        nama_kategori = ar.getString("nama_kategori");
@@ -238,23 +266,66 @@ public class MapRadius extends FragmentActivity implements
                         LatLng snowqualmie = new LatLng(penginapanModel.getLatitude(), penginapanModel.getLongitude());
                         MarkerOptions markerOptions = new MarkerOptions();
 
+                        IconGenerator iconGenerator = new IconGenerator(this);
+                        iconGenerator.setStyle(iconGenerator.STYLE_GREEN);
+
                         markerOptions.position(snowqualmie)
-                                .title(penginapanModel.getNama())
-                                .snippet(penginapanModel.getAlamat())
-                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher));
+//                                .title(penginapanModel.getNama())
+//                                .snippet(penginapanModel.getAlamat())
+                                .icon(BitmapDescriptorFactory.fromBitmap(iconGenerator.makeIcon(penginapanModel.getHarga())));
 
-                        PenginapanInfoWindowGoogleMap infoWindow = new PenginapanInfoWindowGoogleMap(this);
-                        map.setInfoWindowAdapter(infoWindow);
+//                        PenginapanInfoWindowGoogleMap infoWindow = new PenginapanInfoWindowGoogleMap(this);
+//                        map.setInfoWindowAdapter(infoWindow);
 
-                        Marker m = map.addMarker(markerOptions);
-                        m.setTag(penginapanModel);
+                        myMarker = map.addMarker(markerOptions);
+                        mMarkerMap.put(myMarker.getId(),penginapanModel);
+                        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                Intent iHelp = new Intent(context, Detail_penginapan.class);
+                                PenginapanModel pm = mMarkerMap.get(marker.getId());
+                                Bundle bundle = new Bundle();
+
+                                iHelp.putExtra("id_penginapan",pm.getId_penginapan());
+                                iHelp.putExtra("id_kategori_penginapan",pm.getId_kategori_penginapan());
+                                iHelp.putExtra("nama_kategori",pm.getNama_kategori());
+                                iHelp.putExtra("nama",pm.getNama());
+                                iHelp.putExtra("fasilitas",pm.getFasilitas());
+                                iHelp.putExtra("harga",pm.getHarga());
+                                iHelp.putExtra("status",pm.getStatus());
+                                iHelp.putExtra("alamat",pm.getAlamat());
+                                iHelp.putExtra("latitude",pm.getLatitude());
+                                iHelp.putExtra("longitude",pm.getLongitude());
+                                iHelp.putExtra("telepon",pm.getTelepon());
+                                iHelp.putExtra("gambar", pm.getGambar());
+                                Log.d("ExtraFromMap",String.valueOf(iHelp.getIntExtra("id_penginapan",0)));
+//                                bundle.putInt("id_penginapan",pm.getId_penginapan());
+//                                bundle.putInt("id_kategori_penginapan",pm.getId_kategori_penginapan());
+//                                bundle.putString("nama_kategori",pm.getNama_kategori());
+//                                bundle.putString("nama",pm.getNama());
+//                                bundle.putString("fasilitas",pm.getFasilitas());
+//                                bundle.putString("harga",pm.getHarga());
+//                                bundle.putString("status",pm.getStatus());
+//                                bundle.putString("alamat",pm.getAlamat());
+//                                bundle.putDouble("latitude",pm.getLatitude());
+//                                bundle.putDouble("longitude",pm.getLongitude());
+//                                bundle.putString("telepon",pm.getTelepon());
+//                                bundle.putString("gambar", pm.getGambar());
+//                                iHelp.putExtras(bundle);
+                                startActivity(iHelp);
+                                return false;
+                            }
+                        });
+                        myMarker.setTag(penginapanModel);
+                        markerList.add(myMarker);
 
 //                        myMarker = map.addMarker(markerOptions);
 
                     }
-                    jsonParse.stopRequest("VolleyBlockingRequestActivity");
+//                    jsonParse.stopRequest("VolleyBlockingRequestActivity");
                 }
             } catch (JSONException e) {
+                Log.d("Errodx",e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -284,11 +355,5 @@ public class MapRadius extends FragmentActivity implements
             Log.d("client location", loc.toString());
         }
 
-    }
-
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-        marker.showInfoWindow();
-        return false;
     }
 }

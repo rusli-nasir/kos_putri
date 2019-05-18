@@ -30,7 +30,6 @@ public class JsonParseVolley {
     }
 
     public JSONObject getJsonURL(String str_url) {
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, str_url, null,
           new Response.Listener<JSONObject>() {
             @Override
@@ -51,7 +50,6 @@ public class JsonParseVolley {
             }
         });
         jsonObjectRequest.setTag("VolleyBlockingRequestActivity");
-
         queue.add(jsonObjectRequest);
 
         return jObj;
