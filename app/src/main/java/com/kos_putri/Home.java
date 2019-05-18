@@ -14,7 +14,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageButton btnPT = (ImageButton) findViewById(R.id.btnPT);//Penginapan terdekat
-        ImageButton btnLP = (ImageButton) findViewById(R.id.btnLP);//List Penginapan
+//        ImageButton btnLP = (ImageButton) findViewById(R.id.btnLP);//List Penginapan
         ImageButton btnHelp = (ImageButton) findViewById(R.id.btnHelp);//Help
         ImageButton btnExit = (ImageButton) findViewById(R.id.btnExit);//Exit
 
@@ -31,19 +31,19 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        btnLP.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent iLP = new Intent (Home.this, KatPenginapan.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("jenis", "lp");
-                iLP.putExtras(bundle);
-                startActivity(iLP);
-
-            }
-        });
+//        btnLP.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                Intent iLP = new Intent (Home.this, KatPenginapan.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("jenis", "lp");
+//                iLP.putExtras(bundle);
+//                startActivity(iLP);
+//
+//            }
+//        });
 
         btnHelp.setOnClickListener(new View.OnClickListener() {
 

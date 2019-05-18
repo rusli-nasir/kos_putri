@@ -15,27 +15,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="150dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/pt"
         android:src="@drawable/pt"
+        app:layout_constraintEnd_toEndOf="@+id/barrier2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="93dp"
-        android:layout_height="49dp"
-        android:layout_below="@+id/btnPT"
-        android:layout_alignRight="@+id/btnPT"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/pt"
-        android:textColor="#ffffff"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btnLP"
-        app:layout_constraintStart_toStartOf="@+id/btnLP"
-        app:layout_constraintTop_toBottomOf="@+id/btnLP" />
 
     <TextView
         android:id="@+id/textView2"
@@ -55,31 +40,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btnPT" />
 
     <ImageButton
-        android:id="@+id/btnLP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnPT"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/lp"
-        android:src="@drawable/lp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnPT"
-        app:layout_constraintEnd_toEndOf="@+id/barrier2"
-        app:layout_constraintTop_toTopOf="@+id/btnPT" />
-
-    <ImageButton
         android:id="@+id/btnHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_alignLeft="@+id/btnPT"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="66dp"
         android:layout_marginBottom="150dp"
         android:background="@drawable/help"
         android:src="@drawable/help"
         app:layout_constraintBottom_toTopOf="@+id/barrier3"
         app:layout_constraintEnd_toEndOf="@+id/btnPT"
-        app:layout_constraintStart_toStartOf="@+id/btnPT"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -105,11 +78,11 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
         android:layout_alignLeft="@+id/textView2"
+        android:layout_marginEnd="40dp"
         android:background="@drawable/exit"
         android:src="@drawable/exit"
         app:layout_constraintBottom_toBottomOf="@+id/btnHelp"
-        app:layout_constraintEnd_toEndOf="@+id/btnLP"
-        app:layout_constraintStart_toStartOf="@+id/btnLP"
+        app:layout_constraintEnd_toEndOf="@+id/barrier2"
         app:layout_constraintTop_toTopOf="@+id/btnHelp" />
 
     <TextView
