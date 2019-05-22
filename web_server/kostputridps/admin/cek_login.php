@@ -1,6 +1,6 @@
 <?php
 include "../config/koneksi.php";
-$pass=md5($_POST[password]);
+$pass=md5($_POST['password']);
 
 $login=mysql_query("SELECT * FROM admin WHERE id_admin='$_POST[username]' AND password='$pass'");
 $ketemu=mysql_num_rows($login);
