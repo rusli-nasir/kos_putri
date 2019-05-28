@@ -112,4 +112,5 @@
     <string name="lb_rute">Rute</string>
     <string name="lb_nama">Nama :</string>
     <string name="conten_des_img_penginapan">Image Penginapan</string>
+    <string name="title_activity_map_rute">Rute Penginapan</string>
 </resources>

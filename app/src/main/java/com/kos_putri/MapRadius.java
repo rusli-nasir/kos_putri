@@ -235,10 +235,9 @@ public class MapRadius extends FragmentActivity implements
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }
-
                         penginapanModel = new PenginapanModel(
-                                ar.getInt("id_penginapan"),
-                                ar.getInt("id_kategori_penginapan"),
+                                Integer.parseInt(ar.getString("id_penginapan")),
+                                Integer.parseInt(ar.getString("id_kategori_penginapan")),
                                 ar.getString("nama_kategori"),
                                 0,"",
                                 ar.getString("nama"),

@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kos_putri.model.PenginapanModel;
 import com.squareup.picasso.Picasso;
@@ -80,9 +82,22 @@ public class Detail_penginapan extends AppCompatActivity {
         tvAlamat.setText(getIntent().getStringExtra("alamat"));
         tvTlp.setText(getIntent().getStringExtra("telepon"));
 
-            Picasso.get()
-                    .load(getIntent().getStringExtra("gambar"))
-                    .into(imgProfile);
+        Picasso.get().load(getIntent().getStringExtra("gambar")).into(imgProfile);
+
+        btnRute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newIntent = new Intent(Detail_penginapan.this,MapRute.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putInt("id_penginapan", getIntent().getIntExtra("id_penginapan",0));
+                bundle.putString("nama", getIntent().getStringExtra("nama"));
+                bundle.putDouble("latitude", getIntent().getDoubleExtra("latitude",0));
+                bundle.putDouble("longitude", getIntent().getDoubleExtra("longitude",0));
+                newIntent.putExtras(bundle);
+                startActivityForResult(newIntent, 0);
+            }
+        });
     }
 
     @Override

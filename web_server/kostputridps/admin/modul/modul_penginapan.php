@@ -525,5 +525,5 @@ if($_GET['act'] == 'tambahpenginapan' || $_GET['act'] == 'editpenginapan') {
         }
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $gmap_key?>&libraries=places&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=quarterly&key=<?php echo $gmap_key?>&libraries=places&callback=initMap"></script>
 <?php }?>
